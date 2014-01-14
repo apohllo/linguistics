@@ -20,6 +20,7 @@ Hoe.plugin :mercurial
 Hoe.plugin :bundler
 Hoe.plugin :publish
 Hoe.plugin :signing
+Hoe.plugin :gemspec
 
 Hoe.plugins.delete :rubyforge
 
@@ -36,6 +37,8 @@ hoespec = Hoe.spec 'linguistics' do |spec|
 
 	spec.dependency 'hoe-deveiate', '~> 0.3', :development
 	spec.dependency 'hoe-bundler', '~> 1.2', :development
+	spec.dependency 'hoe-gemspec', '~> 1.0.0', :development
+
 	spec.dependency 'linkparser', '~> 1.1', :development
 	spec.dependency 'wordnet', '~> 1.0', :development
 	spec.dependency 'wordnet-defaultdb', '~> 1.0', :development
@@ -48,7 +51,7 @@ hoespec = Hoe.spec 'linguistics' do |spec|
 			"gems of the same name."
 		  ].join( "\n" )
 
-	spec.require_ruby_version( '>=1.9.3' )
+	spec.require_ruby_version( '>=1.9.2' )
 	spec.hg_sign_tags = true if spec.respond_to?( :hg_sign_tags= )
 	spec.check_history_on_release = true if spec.respond_to?( :check_history_on_release= )
 
